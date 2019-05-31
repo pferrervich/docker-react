@@ -6,3 +6,7 @@ services:
 # command used for running the container
 before_install: 
   - docker build -t pferrervich/docker-react -f Dockerfile.dev .
+
+# All commands used for runing test suite
+script: 
+  - docker run pferrervich/docker-react npm run test -- --coverage
