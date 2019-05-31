@@ -9,4 +9,4 @@ before_install:
 
 # All commands used for runing test suite
 script: 
-  - docker run pferrervich/docker-react npm run test -- --coverage
+  - docker run -e CI=true pferrervich/docker-react npm run test -- --watchAll=false
