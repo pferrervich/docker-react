@@ -10,3 +10,13 @@ before_install:
 # All commands used for runing test suite
 script: 
   - docker run -e CI=true pferrervich/docker-react npm run test -- --watchAll=false
+
+deploy: 
+  provider: elasticbeanstalk
+  region: "eu-west-2"
+  app: "docker-react"
+  env: "DockerReact-env"
+  bucket_name: "elasticbeanstalk-eu-west-2-440046809241"
+  bucket_path: "docker-react"
+  on:
+    branch: master
